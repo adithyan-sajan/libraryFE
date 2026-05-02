@@ -5,7 +5,7 @@ const Bookshelf = () => {
   const [books, setBooks] = useState([]);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
-  const API_URL = "https://librarybe-1-34e3.onrender.com";
+  const API_URL = "https://librarybe-1-34e3.onrender.com/books";
 
   const fetchBooks = async () => {
     try {
@@ -32,7 +32,7 @@ const Bookshelf = () => {
   };
 
   const moveBook = async (id, newStatus) => {
-    const bookToUpdate = books.find((b) => b.id === id);
+    let bookToUpdate = books.find((b) => b.id === id);
     await axios.put(`${API_URL}/${id}`, { ...bookToUpdate, status: newStatus });
     fetchBooks();
   };
