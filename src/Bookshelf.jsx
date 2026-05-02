@@ -5,7 +5,7 @@ const Bookshelf = () => {
   const [books, setBooks] = useState([]);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
-  const API_URL = "http://localhost:3000/books";
+  const API_URL = "https://librarybe-1-34e3.onrender.com";
 
   const fetchBooks = async () => {
     try {
